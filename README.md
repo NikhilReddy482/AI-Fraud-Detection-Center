@@ -67,7 +67,7 @@ The detection engine combines three independent models to guarantee high Recall 
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/fraud-detection-system.git
+git clone https://github.com/NikhilReddy482/fraud-detection-system.git
 cd fraud-detection-system
 ```
 
