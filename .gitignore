@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+*.log
+.DS_Store
+
+.vscode/
+
+# Ignore large datasets
+data/**/*.csv
