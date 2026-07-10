@@ -20,7 +20,7 @@ import streamlit as st
 
 TENSORFLOW_AVAILABLE = True
 try:
-    from tensorflow.keras.models import load_model
+    import tensorflow
 except ImportError:
     TENSORFLOW_AVAILABLE = False
 
@@ -111,7 +111,7 @@ def load_all_models():
 
         "autoencoder_model":
 
-            load_model(AUTOENCODER_MODEL),
+            load_autoencoder(),
 
         "autoencoder_scaler":
 
@@ -147,6 +147,7 @@ def load_autoencoder():
     if not TENSORFLOW_AVAILABLE:
         return None
 
+    from tensorflow.keras.models import load_model
     return load_model(AUTOENCODER_MODEL)
 
 
