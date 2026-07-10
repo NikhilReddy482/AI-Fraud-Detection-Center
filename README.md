@@ -2,6 +2,26 @@
 
 The **AI Fraud Intelligence Center** is an enterprise-grade banking risk evaluation and real-time fraud mitigation platform. Designed for modern financial networks, it bridges the gap between raw data science and business operations by running a high-accuracy Tri-Model Machine Learning Ensemble alongside a heuristics-based Risk Engine. The platform features an interactive analyst operations queue, advanced data analytics, batch predictions, and a premium dark-themed command center interface.
 
+## Deployment
+
+This application is deployed using **Streamlit Community Cloud**.
+
+### Deployment Platform
+
+- Streamlit Community Cloud
+
+### Live URL
+
+https://ai-fraud-detection-center.streamlit.app
+
+### Framework
+
+- Streamlit
+
+### Language
+
+- Python
+
 ---
 
 ## 🚀 Key Features
