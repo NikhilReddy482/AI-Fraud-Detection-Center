@@ -233,7 +233,7 @@ class PredictionEngine:
 
                 type(
                     self.autoencoder_model
-                ).__name__,
+                ).__name__ if self.autoencoder_model is not None else "Not Loaded (TensorFlow Unsupported)",
 
             "Supervised Classifier":
 
@@ -308,6 +308,14 @@ class PredictionEngine:
         """
         Run AutoEncoder inference.
         """
+        if self.autoencoder_model is None:
+            # Fallback when TensorFlow is not installed
+            zeros_pred = np.zeros(len(features), dtype=int)
+            zeros_err = np.zeros(len(features), dtype=float)
+            return {
+                "prediction": zeros_pred,
+                "reconstruction_error": zeros_err
+            }
 
         reconstruction = self.autoencoder_model.predict(
 

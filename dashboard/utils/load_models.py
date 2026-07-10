@@ -17,7 +17,12 @@ from __future__ import annotations
 from pathlib import Path
 import joblib
 import streamlit as st
-from tensorflow.keras.models import load_model
+
+TENSORFLOW_AVAILABLE = True
+try:
+    from tensorflow.keras.models import load_model
+except ImportError:
+    TENSORFLOW_AVAILABLE = False
 
 from utils.config import (
     ISOLATION_MODEL,
@@ -138,6 +143,9 @@ def load_isolation_model():
 
 @st.cache_resource(show_spinner=False)
 def load_autoencoder():
+
+    if not TENSORFLOW_AVAILABLE:
+        return None
 
     return load_model(AUTOENCODER_MODEL)
 
